@@ -1,0 +1,132 @@
+//
+//  HomeworkCollectionViewCell.swift
+//  Homeworker
+//
+//  Created by Max Steshkin on 03.10.2023.
+//
+
+import UIKit
+import Combine
+
+class HomeworkCollectionViewCell: UICollectionViewCell {
+    static let identifier = "HomeworkCollectionViewCell"
+    
+    private var bag = Set<AnyCancellable>()
+    
+    var didDeleted: (() -> Void)?
+    var didMarkedDone: (() -> Void)?
+    
+    var homeworkPublisher: (() -> AnyPublisher<HomeworkEntity, Never>)? {
+        didSet {
+            if let homeworkPublisher = homeworkPublisher {
+                homeworkPublisher().sink(receiveValue: { [unowned self] homework in
+                    homeworkChanged(with: homework)
+                }).store(in: &bag)
+            } else {
+                bag.forEach { $0.cancel() }
+            }
+        }
+    }
+    
+    var homework: HomeworkEntity?
+    
+    private let titleView: UILabel = {
+        let view = UILabel()
+        view.numberOfLines = 2
+        view.lineBreakMode = .byTruncatingTail
+        view.font = .systemFont(ofSize: 19, weight: .semibold)
+        view.textColor = .label
+        
+        return view
+    }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        configureViews()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        didDeleted = nil
+        didMarkedDone = nil
+        homeworkPublisher = nil
+        homework = nil
+        
+    }
+    
+    private func configureViews() {
+        backgroundColor = .systemGray6
+        layer.cornerRadius = 10
+        
+        let interaction = UIContextMenuInteraction(delegate: self)
+        addInteraction(interaction)
+        
+        contentView.addSubview(titleView)
+        
+        titleView.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(10)
+            make.top.equalToSuperview().offset(8)
+            make.trailing.lessThanOrEqualToSuperview().offset(-10)
+        }
+    }
+    
+    private func homeworkChanged(with newHomework: HomeworkEntity) {
+        if homework == nil {
+            applyHomework(homework: newHomework)
+        } else {
+            UIView.animate(withDuration: 0.3) { [weak self] in
+                self?.applyHomework(homework: newHomework)
+            }
+        }
+    }
+    
+    private func applyHomework(homework: HomeworkEntity) {
+        backgroundColor = homework.status == .done ? .systemGreen : .systemGray6
+        titleView.textColor = homework.status == .done ? .black : .label
+        
+        let attributeString = NSMutableAttributedString(string: homework.title)
+        
+        if homework.status == .done {
+            attributeString.addAttribute(
+                NSAttributedString.Key.strikethroughStyle,
+                value: 1,
+                range: NSRange(location: 0, length: attributeString.length)
+            )
+        }
+        
+        titleView.attributedText = attributeString
+        
+        self.homework = homework
+    }
+}
+
+extension HomeworkCollectionViewCell: UIContextMenuInteractionDelegate {
+    func contextMenuInteraction(_ interaction: UIContextMenuInteraction, configurationForMenuAtLocation location: CGPoint) -> UIContextMenuConfiguration? {
+        
+        var actions: [UIAction] = []
+        
+        if let didMarkedDone = didMarkedDone, let homework = homework, homework.status != .done {
+            actions.append(UIAction(title: "Done", image: UIImage(systemName: "checkmark.circle")) { action in
+                didMarkedDone()
+            })
+        }
+        
+        if let didDeleted = didDeleted {
+            actions.append(UIAction(title: "Delete", image: UIImage(systemName: "trash"), attributes: .destructive) { action in
+                didDeleted()
+            })
+        }
+        
+        if actions.isEmpty { return nil }
+        
+        return UIContextMenuConfiguration(actionProvider: { recomendedActions in
+            return UIMenu(children: actions)
+        })
+    }
+}

@@ -1,0 +1,808 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5A16A8E042D7113479EC13C5 /* Pods_Homeworker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A088A76579D6A5B481A40D5 /* Pods_Homeworker.framework */; };
+		7247DC442ACBE2A000A0BC45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247DC432ACBE2A000A0BC45 /* AppDelegate.swift */; };
+		7247DC462ACBE2A000A0BC45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247DC452ACBE2A000A0BC45 /* SceneDelegate.swift */; };
+		7247DC502ACBE2A300A0BC45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7247DC4F2ACBE2A300A0BC45 /* Assets.xcassets */; };
+		7247DC532ACBE2A300A0BC45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7247DC512ACBE2A300A0BC45 /* LaunchScreen.storyboard */; };
+		7247DC5E2ACBE3FE00A0BC45 /* AppStarter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247DC5D2ACBE3FE00A0BC45 /* AppStarter.swift */; };
+		7247DC662ACBE4EE00A0BC45 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247DC652ACBE4EE00A0BC45 /* AppCoordinator.swift */; };
+		7247DC682ACBE50600A0BC45 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247DC672ACBE50600A0BC45 /* Coordinator.swift */; };
+		7247DC6B2ACBE5BC00A0BC45 /* HomeworkCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247DC6A2ACBE5BC00A0BC45 /* HomeworkCoordinator.swift */; };
+		7247DC6D2ACBE68F00A0BC45 /* HomeworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247DC6C2ACBE68F00A0BC45 /* HomeworkViewController.swift */; };
+		7247DC702ACBFB5100A0BC45 /* HomeworkSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247DC6F2ACBFB5100A0BC45 /* HomeworkSectionHeader.swift */; };
+		7247DC722ACC62B100A0BC45 /* HomeworkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247DC712ACC62B100A0BC45 /* HomeworkCollectionViewCell.swift */; };
+		7247DC752ACC6D0D00A0BC45 /* HomeworkDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247DC742ACC6D0D00A0BC45 /* HomeworkDetailsViewController.swift */; };
+		7247DC7A2ACC6D6400A0BC45 /* HomeworkEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247DC792ACC6D6400A0BC45 /* HomeworkEntity.swift */; };
+		7247DC7C2ACC74EA00A0BC45 /* HomeworkStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247DC7B2ACC74EA00A0BC45 /* HomeworkStatus.swift */; };
+		7247DC812ACC79AB00A0BC45 /* CreateHomeworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247DC802ACC79AB00A0BC45 /* CreateHomeworkViewController.swift */; };
+		7247DC832ACC7A5000A0BC45 /* CreateHomeworkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247DC822ACC7A5000A0BC45 /* CreateHomeworkButton.swift */; };
+		7247DC862ACC7E3E00A0BC45 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247DC852ACC7E3E00A0BC45 /* CustomButton.swift */; };
+		7247DC892ACD356D00A0BC45 /* CreateHomeworkField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247DC882ACD356D00A0BC45 /* CreateHomeworkField.swift */; };
+		7247DC8C2ACD5E3C00A0BC45 /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247DC8B2ACD5E3C00A0BC45 /* UseCase.swift */; };
+		7247DC8F2ACD5FDE00A0BC45 /* HomeworkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247DC8E2ACD5FDE00A0BC45 /* HomeworkRepository.swift */; };
+		7247DC932ACD607C00A0BC45 /* SubjectEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247DC922ACD607C00A0BC45 /* SubjectEntity.swift */; };
+		7247DC962ACD629700A0BC45 /* GetAllTasksPublisherUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247DC952ACD629700A0BC45 /* GetAllTasksPublisherUseCase.swift */; };
+		7247DC982ACD635F00A0BC45 /* CreateHomeworkUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247DC972ACD635F00A0BC45 /* CreateHomeworkUseCase.swift */; };
+		7247DC9A2ACD63E700A0BC45 /* DeleteHomeworkUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247DC992ACD63E700A0BC45 /* DeleteHomeworkUseCase.swift */; };
+		7247DC9C2ACD644200A0BC45 /* MarkDoneHomeworkUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247DC9B2ACD644200A0BC45 /* MarkDoneHomeworkUseCase.swift */; };
+		7247DC9F2ACD64D600A0BC45 /* HomeworkUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247DC9E2ACD64D600A0BC45 /* HomeworkUpdate.swift */; };
+		7247DCA32ACD65A800A0BC45 /* HomeworkRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247DCA22ACD65A800A0BC45 /* HomeworkRepositoryImpl.swift */; };
+		7247DCA62ACD65D700A0BC45 /* HomeworkLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247DCA52ACD65D700A0BC45 /* HomeworkLocalDataSource.swift */; };
+		7247DCA82ACD65EF00A0BC45 /* HomeworkLocalDataSourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247DCA72ACD65EF00A0BC45 /* HomeworkLocalDataSourceImpl.swift */; };
+		7247DCAD2ACD67DB00A0BC45 /* HomeworkSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247DCAC2ACD67DB00A0BC45 /* HomeworkSnapshot.swift */; };
+		7247DCB12ACD697700A0BC45 /* HomeworkUpdateReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247DCB02ACD697700A0BC45 /* HomeworkUpdateReference.swift */; };
+		7247DCB42ACD6A6600A0BC45 /* HomeworkMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247DCB32ACD6A6600A0BC45 /* HomeworkMapper.swift */; };
+		7247DCB72ACDA22400A0BC45 /* HomeworkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247DCB62ACDA22400A0BC45 /* HomeworkViewModel.swift */; };
+		7247DCBA2ACDA73000A0BC45 /* CreateHomeworkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247DCB92ACDA73000A0BC45 /* CreateHomeworkViewModel.swift */; };
+		7247DCBD2ACDB60F00A0BC45 /* OrderedMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247DCBC2ACDB60F00A0BC45 /* OrderedMap.swift */; };
+		7247DCC02ACF0CFE00A0BC45 /* Publisher+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247DCBF2ACF0CFE00A0BC45 /* Publisher+Extension.swift */; };
+		7247DCC22ACF273900A0BC45 /* WorkScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247DCC12ACF273900A0BC45 /* WorkScheduler.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		19F453B3300694ECEC0C780D /* Pods-Homeworker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Homeworker.release.xcconfig"; path = "Target Support Files/Pods-Homeworker/Pods-Homeworker.release.xcconfig"; sourceTree = "<group>"; };
+		3A088A76579D6A5B481A40D5 /* Pods_Homeworker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Homeworker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		43637205FD1E95EF26D6EF14 /* Pods-Homeworker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Homeworker.debug.xcconfig"; path = "Target Support Files/Pods-Homeworker/Pods-Homeworker.debug.xcconfig"; sourceTree = "<group>"; };
+		7247DC402ACBE2A000A0BC45 /* Homeworker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homeworker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7247DC432ACBE2A000A0BC45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7247DC452ACBE2A000A0BC45 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		7247DC4F2ACBE2A300A0BC45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7247DC522ACBE2A300A0BC45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7247DC542ACBE2A300A0BC45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7247DC5D2ACBE3FE00A0BC45 /* AppStarter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStarter.swift; sourceTree = "<group>"; };
+		7247DC652ACBE4EE00A0BC45 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		7247DC672ACBE50600A0BC45 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		7247DC6A2ACBE5BC00A0BC45 /* HomeworkCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkCoordinator.swift; sourceTree = "<group>"; };
+		7247DC6C2ACBE68F00A0BC45 /* HomeworkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkViewController.swift; sourceTree = "<group>"; };
+		7247DC6F2ACBFB5100A0BC45 /* HomeworkSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkSectionHeader.swift; sourceTree = "<group>"; };
+		7247DC712ACC62B100A0BC45 /* HomeworkCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkCollectionViewCell.swift; sourceTree = "<group>"; };
+		7247DC742ACC6D0D00A0BC45 /* HomeworkDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkDetailsViewController.swift; sourceTree = "<group>"; };
+		7247DC792ACC6D6400A0BC45 /* HomeworkEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkEntity.swift; sourceTree = "<group>"; };
+		7247DC7B2ACC74EA00A0BC45 /* HomeworkStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkStatus.swift; sourceTree = "<group>"; };
+		7247DC802ACC79AB00A0BC45 /* CreateHomeworkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHomeworkViewController.swift; sourceTree = "<group>"; };
+		7247DC822ACC7A5000A0BC45 /* CreateHomeworkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHomeworkButton.swift; sourceTree = "<group>"; };
+		7247DC852ACC7E3E00A0BC45 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		7247DC882ACD356D00A0BC45 /* CreateHomeworkField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHomeworkField.swift; sourceTree = "<group>"; };
+		7247DC8B2ACD5E3C00A0BC45 /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
+		7247DC8E2ACD5FDE00A0BC45 /* HomeworkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkRepository.swift; sourceTree = "<group>"; };
+		7247DC922ACD607C00A0BC45 /* SubjectEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectEntity.swift; sourceTree = "<group>"; };
+		7247DC952ACD629700A0BC45 /* GetAllTasksPublisherUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllTasksPublisherUseCase.swift; sourceTree = "<group>"; };
+		7247DC972ACD635F00A0BC45 /* CreateHomeworkUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHomeworkUseCase.swift; sourceTree = "<group>"; };
+		7247DC992ACD63E700A0BC45 /* DeleteHomeworkUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteHomeworkUseCase.swift; sourceTree = "<group>"; };
+		7247DC9B2ACD644200A0BC45 /* MarkDoneHomeworkUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkDoneHomeworkUseCase.swift; sourceTree = "<group>"; };
+		7247DC9E2ACD64D600A0BC45 /* HomeworkUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkUpdate.swift; sourceTree = "<group>"; };
+		7247DCA22ACD65A800A0BC45 /* HomeworkRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkRepositoryImpl.swift; sourceTree = "<group>"; };
+		7247DCA52ACD65D700A0BC45 /* HomeworkLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkLocalDataSource.swift; sourceTree = "<group>"; };
+		7247DCA72ACD65EF00A0BC45 /* HomeworkLocalDataSourceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkLocalDataSourceImpl.swift; sourceTree = "<group>"; };
+		7247DCAC2ACD67DB00A0BC45 /* HomeworkSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkSnapshot.swift; sourceTree = "<group>"; };
+		7247DCB02ACD697700A0BC45 /* HomeworkUpdateReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkUpdateReference.swift; sourceTree = "<group>"; };
+		7247DCB32ACD6A6600A0BC45 /* HomeworkMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkMapper.swift; sourceTree = "<group>"; };
+		7247DCB62ACDA22400A0BC45 /* HomeworkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkViewModel.swift; sourceTree = "<group>"; };
+		7247DCB92ACDA73000A0BC45 /* CreateHomeworkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHomeworkViewModel.swift; sourceTree = "<group>"; };
+		7247DCBC2ACDB60F00A0BC45 /* OrderedMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderedMap.swift; sourceTree = "<group>"; };
+		7247DCBF2ACF0CFE00A0BC45 /* Publisher+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+Extension.swift"; sourceTree = "<group>"; };
+		7247DCC12ACF273900A0BC45 /* WorkScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkScheduler.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7247DC3D2ACBE2A000A0BC45 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A16A8E042D7113479EC13C5 /* Pods_Homeworker.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		25C4BA923C38BA3447108705 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				43637205FD1E95EF26D6EF14 /* Pods-Homeworker.debug.xcconfig */,
+				19F453B3300694ECEC0C780D /* Pods-Homeworker.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		539ABE2FFF3FE2F28F1E7D55 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3A088A76579D6A5B481A40D5 /* Pods_Homeworker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7247DC372ACBE2A000A0BC45 = {
+			isa = PBXGroup;
+			children = (
+				7247DC422ACBE2A000A0BC45 /* Homeworker */,
+				7247DC412ACBE2A000A0BC45 /* Products */,
+				25C4BA923C38BA3447108705 /* Pods */,
+				539ABE2FFF3FE2F28F1E7D55 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7247DC412ACBE2A000A0BC45 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7247DC402ACBE2A000A0BC45 /* Homeworker.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7247DC422ACBE2A000A0BC45 /* Homeworker */ = {
+			isa = PBXGroup;
+			children = (
+				7247DC5A2ACBE34300A0BC45 /* UI */,
+				7247DC772ACC6D4600A0BC45 /* Domain */,
+				7247DCA02ACD657600A0BC45 /* Data */,
+				7247DC5B2ACBE34C00A0BC45 /* Application */,
+				7247DC5C2ACBE37500A0BC45 /* Resources */,
+			);
+			path = Homeworker;
+			sourceTree = "<group>";
+		};
+		7247DC5A2ACBE34300A0BC45 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				7247DC5F2ACBE48000A0BC45 /* Shared */,
+				7247DC732ACC6CE700A0BC45 /* HomeworkDetails */,
+				7247DC602ACBE48500A0BC45 /* Homeworks */,
+				7247DC7E2ACC798500A0BC45 /* CreateHomework */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		7247DC5B2ACBE34C00A0BC45 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				7247DCBB2ACDB60100A0BC45 /* Shared */,
+				7247DC432ACBE2A000A0BC45 /* AppDelegate.swift */,
+				7247DC452ACBE2A000A0BC45 /* SceneDelegate.swift */,
+				7247DC5D2ACBE3FE00A0BC45 /* AppStarter.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		7247DC5C2ACBE37500A0BC45 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7247DC4F2ACBE2A300A0BC45 /* Assets.xcassets */,
+				7247DC512ACBE2A300A0BC45 /* LaunchScreen.storyboard */,
+				7247DC542ACBE2A300A0BC45 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7247DC5F2ACBE48000A0BC45 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				7247DC842ACC7E1600A0BC45 /* Views */,
+				7247DC642ACBE4E200A0BC45 /* Coordinators */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		7247DC602ACBE48500A0BC45 /* Homeworks */ = {
+			isa = PBXGroup;
+			children = (
+				7247DC692ACBE5AD00A0BC45 /* Coordinators */,
+				7247DCB52ACDA20600A0BC45 /* ViewModel */,
+				7247DC6E2ACBFB3700A0BC45 /* Views */,
+				7247DC612ACBE4C700A0BC45 /* Controllers */,
+			);
+			path = Homeworks;
+			sourceTree = "<group>";
+		};
+		7247DC612ACBE4C700A0BC45 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7247DCC32ACF288600A0BC45 /* Homework */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		7247DC642ACBE4E200A0BC45 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				7247DC652ACBE4EE00A0BC45 /* AppCoordinator.swift */,
+				7247DC672ACBE50600A0BC45 /* Coordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		7247DC692ACBE5AD00A0BC45 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				7247DC6A2ACBE5BC00A0BC45 /* HomeworkCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		7247DC6E2ACBFB3700A0BC45 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7247DC6F2ACBFB5100A0BC45 /* HomeworkSectionHeader.swift */,
+				7247DC712ACC62B100A0BC45 /* HomeworkCollectionViewCell.swift */,
+				7247DC822ACC7A5000A0BC45 /* CreateHomeworkButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7247DC732ACC6CE700A0BC45 /* HomeworkDetails */ = {
+			isa = PBXGroup;
+			children = (
+				7247DC762ACC6D3500A0BC45 /* Controllers */,
+			);
+			path = HomeworkDetails;
+			sourceTree = "<group>";
+		};
+		7247DC762ACC6D3500A0BC45 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7247DC742ACC6D0D00A0BC45 /* HomeworkDetailsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		7247DC772ACC6D4600A0BC45 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				7247DC9D2ACD64CB00A0BC45 /* Models */,
+				7247DC782ACC6D5300A0BC45 /* Entities */,
+				7247DC8D2ACD5F9200A0BC45 /* Repositories */,
+				7247DC8A2ACD5E1F00A0BC45 /* UseCases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		7247DC782ACC6D5300A0BC45 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				7247DC792ACC6D6400A0BC45 /* HomeworkEntity.swift */,
+				7247DC922ACD607C00A0BC45 /* SubjectEntity.swift */,
+				7247DC7B2ACC74EA00A0BC45 /* HomeworkStatus.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		7247DC7E2ACC798500A0BC45 /* CreateHomework */ = {
+			isa = PBXGroup;
+			children = (
+				7247DCB82ACDA72200A0BC45 /* ViewModels */,
+				7247DC872ACD355200A0BC45 /* Views */,
+				7247DC7F2ACC799300A0BC45 /* Controllers */,
+			);
+			path = CreateHomework;
+			sourceTree = "<group>";
+		};
+		7247DC7F2ACC799300A0BC45 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7247DC802ACC79AB00A0BC45 /* CreateHomeworkViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		7247DC842ACC7E1600A0BC45 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7247DC852ACC7E3E00A0BC45 /* CustomButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7247DC872ACD355200A0BC45 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7247DC882ACD356D00A0BC45 /* CreateHomeworkField.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7247DC8A2ACD5E1F00A0BC45 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				7247DC942ACD628100A0BC45 /* Homeworks */,
+				7247DC8B2ACD5E3C00A0BC45 /* UseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		7247DC8D2ACD5F9200A0BC45 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				7247DC8E2ACD5FDE00A0BC45 /* HomeworkRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		7247DC942ACD628100A0BC45 /* Homeworks */ = {
+			isa = PBXGroup;
+			children = (
+				7247DC952ACD629700A0BC45 /* GetAllTasksPublisherUseCase.swift */,
+				7247DC972ACD635F00A0BC45 /* CreateHomeworkUseCase.swift */,
+				7247DC992ACD63E700A0BC45 /* DeleteHomeworkUseCase.swift */,
+				7247DC9B2ACD644200A0BC45 /* MarkDoneHomeworkUseCase.swift */,
+			);
+			path = Homeworks;
+			sourceTree = "<group>";
+		};
+		7247DC9D2ACD64CB00A0BC45 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7247DC9E2ACD64D600A0BC45 /* HomeworkUpdate.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7247DCA02ACD657600A0BC45 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				7247DCB22ACD6A3500A0BC45 /* Mappers */,
+				7247DCA92ACD666300A0BC45 /* Models */,
+				7247DCA42ACD65C400A0BC45 /* DataSources */,
+				7247DCA12ACD658000A0BC45 /* Repositories */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		7247DCA12ACD658000A0BC45 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				7247DCA22ACD65A800A0BC45 /* HomeworkRepositoryImpl.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		7247DCA42ACD65C400A0BC45 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				7247DCA52ACD65D700A0BC45 /* HomeworkLocalDataSource.swift */,
+				7247DCA72ACD65EF00A0BC45 /* HomeworkLocalDataSourceImpl.swift */,
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
+		7247DCA92ACD666300A0BC45 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7247DCAC2ACD67DB00A0BC45 /* HomeworkSnapshot.swift */,
+				7247DCB02ACD697700A0BC45 /* HomeworkUpdateReference.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7247DCB22ACD6A3500A0BC45 /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				7247DCB32ACD6A6600A0BC45 /* HomeworkMapper.swift */,
+			);
+			path = Mappers;
+			sourceTree = "<group>";
+		};
+		7247DCB52ACDA20600A0BC45 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7247DCB62ACDA22400A0BC45 /* HomeworkViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7247DCB82ACDA72200A0BC45 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				7247DCB92ACDA73000A0BC45 /* CreateHomeworkViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		7247DCBB2ACDB60100A0BC45 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				7247DCBE2ACF0CEF00A0BC45 /* Extensions */,
+				7247DCBC2ACDB60F00A0BC45 /* OrderedMap.swift */,
+				7247DCC12ACF273900A0BC45 /* WorkScheduler.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		7247DCBE2ACF0CEF00A0BC45 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7247DCBF2ACF0CFE00A0BC45 /* Publisher+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7247DCC32ACF288600A0BC45 /* Homework */ = {
+			isa = PBXGroup;
+			children = (
+				7247DC6C2ACBE68F00A0BC45 /* HomeworkViewController.swift */,
+			);
+			path = Homework;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7247DC3F2ACBE2A000A0BC45 /* Homeworker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7247DC572ACBE2A300A0BC45 /* Build configuration list for PBXNativeTarget "Homeworker" */;
+			buildPhases = (
+				C2E447AD94062ECEC8191F15 /* [CP] Check Pods Manifest.lock */,
+				7247DC3C2ACBE2A000A0BC45 /* Sources */,
+				7247DC3D2ACBE2A000A0BC45 /* Frameworks */,
+				7247DC3E2ACBE2A000A0BC45 /* Resources */,
+				A55914FE3F4C345F0A7CF31B /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Homeworker;
+			productName = Homeworker;
+			productReference = 7247DC402ACBE2A000A0BC45 /* Homeworker.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7247DC382ACBE2A000A0BC45 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					7247DC3F2ACBE2A000A0BC45 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = 7247DC3B2ACBE2A000A0BC45 /* Build configuration list for PBXProject "Homeworker" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7247DC372ACBE2A000A0BC45;
+			productRefGroup = 7247DC412ACBE2A000A0BC45 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7247DC3F2ACBE2A000A0BC45 /* Homeworker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7247DC3E2ACBE2A000A0BC45 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7247DC532ACBE2A300A0BC45 /* LaunchScreen.storyboard in Resources */,
+				7247DC502ACBE2A300A0BC45 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A55914FE3F4C345F0A7CF31B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Homeworker/Pods-Homeworker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Homeworker/Pods-Homeworker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Homeworker/Pods-Homeworker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2E447AD94062ECEC8191F15 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Homeworker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7247DC3C2ACBE2A000A0BC45 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7247DCB42ACD6A6600A0BC45 /* HomeworkMapper.swift in Sources */,
+				7247DC702ACBFB5100A0BC45 /* HomeworkSectionHeader.swift in Sources */,
+				7247DCC02ACF0CFE00A0BC45 /* Publisher+Extension.swift in Sources */,
+				7247DC442ACBE2A000A0BC45 /* AppDelegate.swift in Sources */,
+				7247DCAD2ACD67DB00A0BC45 /* HomeworkSnapshot.swift in Sources */,
+				7247DCBA2ACDA73000A0BC45 /* CreateHomeworkViewModel.swift in Sources */,
+				7247DC682ACBE50600A0BC45 /* Coordinator.swift in Sources */,
+				7247DC832ACC7A5000A0BC45 /* CreateHomeworkButton.swift in Sources */,
+				7247DCB12ACD697700A0BC45 /* HomeworkUpdateReference.swift in Sources */,
+				7247DC722ACC62B100A0BC45 /* HomeworkCollectionViewCell.swift in Sources */,
+				7247DC6D2ACBE68F00A0BC45 /* HomeworkViewController.swift in Sources */,
+				7247DCA82ACD65EF00A0BC45 /* HomeworkLocalDataSourceImpl.swift in Sources */,
+				7247DC752ACC6D0D00A0BC45 /* HomeworkDetailsViewController.swift in Sources */,
+				7247DC8C2ACD5E3C00A0BC45 /* UseCase.swift in Sources */,
+				7247DCB72ACDA22400A0BC45 /* HomeworkViewModel.swift in Sources */,
+				7247DC982ACD635F00A0BC45 /* CreateHomeworkUseCase.swift in Sources */,
+				7247DCA32ACD65A800A0BC45 /* HomeworkRepositoryImpl.swift in Sources */,
+				7247DCA62ACD65D700A0BC45 /* HomeworkLocalDataSource.swift in Sources */,
+				7247DC7A2ACC6D6400A0BC45 /* HomeworkEntity.swift in Sources */,
+				7247DC892ACD356D00A0BC45 /* CreateHomeworkField.swift in Sources */,
+				7247DC9C2ACD644200A0BC45 /* MarkDoneHomeworkUseCase.swift in Sources */,
+				7247DC662ACBE4EE00A0BC45 /* AppCoordinator.swift in Sources */,
+				7247DC9A2ACD63E700A0BC45 /* DeleteHomeworkUseCase.swift in Sources */,
+				7247DC8F2ACD5FDE00A0BC45 /* HomeworkRepository.swift in Sources */,
+				7247DC6B2ACBE5BC00A0BC45 /* HomeworkCoordinator.swift in Sources */,
+				7247DC462ACBE2A000A0BC45 /* SceneDelegate.swift in Sources */,
+				7247DC962ACD629700A0BC45 /* GetAllTasksPublisherUseCase.swift in Sources */,
+				7247DC5E2ACBE3FE00A0BC45 /* AppStarter.swift in Sources */,
+				7247DC932ACD607C00A0BC45 /* SubjectEntity.swift in Sources */,
+				7247DC7C2ACC74EA00A0BC45 /* HomeworkStatus.swift in Sources */,
+				7247DC812ACC79AB00A0BC45 /* CreateHomeworkViewController.swift in Sources */,
+				7247DCC22ACF273900A0BC45 /* WorkScheduler.swift in Sources */,
+				7247DCBD2ACDB60F00A0BC45 /* OrderedMap.swift in Sources */,
+				7247DC9F2ACD64D600A0BC45 /* HomeworkUpdate.swift in Sources */,
+				7247DC862ACC7E3E00A0BC45 /* CustomButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7247DC512ACBE2A300A0BC45 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7247DC522ACBE2A300A0BC45 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7247DC552ACBE2A300A0BC45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7247DC562ACBE2A300A0BC45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7247DC582ACBE2A300A0BC45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43637205FD1E95EF26D6EF14 /* Pods-Homeworker.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 78223NQD36;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Homeworker/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.Homeworker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		7247DC592ACBE2A300A0BC45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19F453B3300694ECEC0C780D /* Pods-Homeworker.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 78223NQD36;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Homeworker/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.Homeworker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7247DC3B2ACBE2A000A0BC45 /* Build configuration list for PBXProject "Homeworker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7247DC552ACBE2A300A0BC45 /* Debug */,
+				7247DC562ACBE2A300A0BC45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7247DC572ACBE2A300A0BC45 /* Build configuration list for PBXNativeTarget "Homeworker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7247DC582ACBE2A300A0BC45 /* Debug */,
+				7247DC592ACBE2A300A0BC45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7247DC382ACBE2A000A0BC45 /* Project object */;
+}
