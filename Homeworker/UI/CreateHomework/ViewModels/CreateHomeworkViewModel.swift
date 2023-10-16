@@ -20,9 +20,9 @@ class CreateHomeworkViewModel {
     func titleChanged(with title: String) { titleTextEvents.send(title) }
     
     
-    private let subjectTextEvents = PassthroughSubject<String, Never>()
+    private let subjectEvents = PassthroughSubject<SubjectEntity?, Never>()
     
-    func subjectChanged(with subject: String) { subjectTextEvents.send(subject) }
+    func subjectChanged(with subject: SubjectEntity?) { subjectEvents.send(subject) }
     
     
     private let endDateEvents = PassthroughSubject<Date, Never>()
@@ -45,8 +45,8 @@ class CreateHomeworkViewModel {
     
     
     func listenFields() {
-        Publishers.CombineLatest3(titleTextEvents, subjectTextEvents, endDateEvents).map { (title, subject, endDate) in
-            return !title.isEmpty && !subject.isEmpty && endDate.timeIntervalSince1970 > Date().timeIntervalSince1970
+        Publishers.CombineLatest3(titleTextEvents, subjectEvents, endDateEvents).map { (title, subject, endDate) in
+            return !title.isEmpty && subject != nil && !subject!.name.isEmpty && endDate.timeIntervalSince1970 > Date().timeIntervalSince1970
         }.sink { [weak self] valid in
             self?.buttonAvailableSubject.send(valid)
         }.store(in: &bag)

@@ -36,16 +36,14 @@ class HomeworkCoordinator: Coordinator {
     }
     
     func goToCreate() {
-        let controller = makeCreateHomeworkController()
-        controller.modalPresentationStyle = .pageSheet
-        
-        navigationController.present(controller, animated: true)
+        let coordinator = makeCreateHomeworkCoordinator()
+        coordinator.start()
     }
     
     private func makeHomeworkController() -> HomeworkViewController {
         let controller = HomeworkViewController()
         
-        let viewModel = HomeworkViewModel(
+        let viewModel = HomeworkViewModelImpl(
             getAllTasksPublisherUseCase: GetAllTasksPublisherUseCase(homeworkRepository: homeworkRepository),
             deleteHomewprkUseCase: DeleteHomeworkUseCase(homeworkRepository: homeworkRepository),
             markDoneHomeworkUseCase: MarkDoneHomeworkUseCase(homeworkRepositpry: homeworkRepository)
@@ -63,14 +61,10 @@ class HomeworkCoordinator: Coordinator {
         return controller
     }
     
-    private func makeCreateHomeworkController() -> CreateHomeworkViewController {
-        let controller = CreateHomeworkViewController()
-        let viewModel = CreateHomeworkViewModel(
-            createHomeworkUseCase: CreateHomeworkUseCase(homeworkRepository: homeworkRepository)
-        )
+    private func makeCreateHomeworkCoordinator() -> CreateHomeworkCoordinator {
+        let coordinator = CreateHomeworkCoordinator(navigationController: navigationController)
+        coordinator.homeworkRepository = homeworkRepository
         
-        controller.viewModel = viewModel
-        
-        return controller
+        return coordinator
     }
 }

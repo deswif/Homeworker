@@ -10,7 +10,7 @@ import Combine
 
 protocol HomeworkRepository {
     
-    func allTasksPuiblisher() -> AnyPublisher<[SubjectEntity], Never>
+    func allTasksPuiblisher() -> AnyPublisher<[SubjectTasksEntity], Never>
     
     func createHomework(title: String, subject: String, endDate: Date, completion: @escaping (Result<Void, Error>) -> Void)
     

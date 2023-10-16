@@ -45,6 +45,23 @@
 		7247DCBD2ACDB60F00A0BC45 /* OrderedMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247DCBC2ACDB60F00A0BC45 /* OrderedMap.swift */; };
 		7247DCC02ACF0CFE00A0BC45 /* Publisher+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247DCBF2ACF0CFE00A0BC45 /* Publisher+Extension.swift */; };
 		7247DCC22ACF273900A0BC45 /* WorkScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247DCC12ACF273900A0BC45 /* WorkScheduler.swift */; };
+		72D562842ADA5891006A386B /* HomeworkViewModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D562832ADA5891006A386B /* HomeworkViewModelImpl.swift */; };
+		72D562862ADA58BC006A386B /* HomeworkViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D562852ADA58BC006A386B /* HomeworkViewModelMock.swift */; };
+		72D562882ADA5BED006A386B /* SubjectRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D562872ADA5BED006A386B /* SubjectRepository.swift */; };
+		72D5628B2ADA5C4C006A386B /* SubjectTasksEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D5628A2ADA5C4C006A386B /* SubjectTasksEntity.swift */; };
+		72D5628D2ADA5F41006A386B /* SubjectLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D5628C2ADA5F41006A386B /* SubjectLocalDataSource.swift */; };
+		72D5628F2ADA5F4F006A386B /* SubjectLocalDataSourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D5628E2ADA5F4F006A386B /* SubjectLocalDataSourceImpl.swift */; };
+		72D562912ADA5FB7006A386B /* SubjectReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D562902ADA5FB7006A386B /* SubjectReference.swift */; };
+		72D562932ADA603D006A386B /* SubjectSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D562922ADA603D006A386B /* SubjectSnapshot.swift */; };
+		72D562952ADA6353006A386B /* SubjectRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D562942ADA6353006A386B /* SubjectRepositoryImpl.swift */; };
+		72D562972ADA63AD006A386B /* SubjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D562962ADA63AD006A386B /* SubjectMapper.swift */; };
+		72D5629A2ADA6563006A386B /* GetAllSubjectsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D562992ADA6563006A386B /* GetAllSubjectsUseCase.swift */; };
+		72D5629C2ADA65AA006A386B /* CreateSubjectUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D5629B2ADA65AA006A386B /* CreateSubjectUseCase.swift */; };
+		72D5629E2ADA6609006A386B /* DeleteSubjectUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D5629D2ADA6609006A386B /* DeleteSubjectUseCase.swift */; };
+		72D562A22ADA66C5006A386B /* SubjectListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D562A12ADA66C5006A386B /* SubjectListViewController.swift */; };
+		72D562A52ADA685A006A386B /* CreateHomeworkCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D562A42ADA685A006A386B /* CreateHomeworkCoordinator.swift */; };
+		72D562A82ADA6B2F006A386B /* SubjectListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D562A72ADA6B2F006A386B /* SubjectListCoordinator.swift */; };
+		72D562AA2ADA6D70006A386B /* CreateHomeworkSubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D562A92ADA6D70006A386B /* CreateHomeworkSubjectView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +107,23 @@
 		7247DCBC2ACDB60F00A0BC45 /* OrderedMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderedMap.swift; sourceTree = "<group>"; };
 		7247DCBF2ACF0CFE00A0BC45 /* Publisher+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+Extension.swift"; sourceTree = "<group>"; };
 		7247DCC12ACF273900A0BC45 /* WorkScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkScheduler.swift; sourceTree = "<group>"; };
+		72D562832ADA5891006A386B /* HomeworkViewModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkViewModelImpl.swift; sourceTree = "<group>"; };
+		72D562852ADA58BC006A386B /* HomeworkViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkViewModelMock.swift; sourceTree = "<group>"; };
+		72D562872ADA5BED006A386B /* SubjectRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectRepository.swift; sourceTree = "<group>"; };
+		72D5628A2ADA5C4C006A386B /* SubjectTasksEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectTasksEntity.swift; sourceTree = "<group>"; };
+		72D5628C2ADA5F41006A386B /* SubjectLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectLocalDataSource.swift; sourceTree = "<group>"; };
+		72D5628E2ADA5F4F006A386B /* SubjectLocalDataSourceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectLocalDataSourceImpl.swift; sourceTree = "<group>"; };
+		72D562902ADA5FB7006A386B /* SubjectReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectReference.swift; sourceTree = "<group>"; };
+		72D562922ADA603D006A386B /* SubjectSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectSnapshot.swift; sourceTree = "<group>"; };
+		72D562942ADA6353006A386B /* SubjectRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectRepositoryImpl.swift; sourceTree = "<group>"; };
+		72D562962ADA63AD006A386B /* SubjectMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectMapper.swift; sourceTree = "<group>"; };
+		72D562992ADA6563006A386B /* GetAllSubjectsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllSubjectsUseCase.swift; sourceTree = "<group>"; };
+		72D5629B2ADA65AA006A386B /* CreateSubjectUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSubjectUseCase.swift; sourceTree = "<group>"; };
+		72D5629D2ADA6609006A386B /* DeleteSubjectUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteSubjectUseCase.swift; sourceTree = "<group>"; };
+		72D562A12ADA66C5006A386B /* SubjectListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectListViewController.swift; sourceTree = "<group>"; };
+		72D562A42ADA685A006A386B /* CreateHomeworkCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHomeworkCoordinator.swift; sourceTree = "<group>"; };
+		72D562A72ADA6B2F006A386B /* SubjectListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectListCoordinator.swift; sourceTree = "<group>"; };
+		72D562A92ADA6D70006A386B /* CreateHomeworkSubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHomeworkSubjectView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +192,7 @@
 				7247DC732ACC6CE700A0BC45 /* HomeworkDetails */,
 				7247DC602ACBE48500A0BC45 /* Homeworks */,
 				7247DC7E2ACC798500A0BC45 /* CreateHomework */,
+				72D5629F2ADA6650006A386B /* SubjectList */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -271,6 +306,7 @@
 				7247DC792ACC6D6400A0BC45 /* HomeworkEntity.swift */,
 				7247DC922ACD607C00A0BC45 /* SubjectEntity.swift */,
 				7247DC7B2ACC74EA00A0BC45 /* HomeworkStatus.swift */,
+				72D5628A2ADA5C4C006A386B /* SubjectTasksEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -278,6 +314,7 @@
 		7247DC7E2ACC798500A0BC45 /* CreateHomework */ = {
 			isa = PBXGroup;
 			children = (
+				72D562A32ADA684B006A386B /* Coordinators */,
 				7247DCB82ACDA72200A0BC45 /* ViewModels */,
 				7247DC872ACD355200A0BC45 /* Views */,
 				7247DC7F2ACC799300A0BC45 /* Controllers */,
@@ -305,6 +342,7 @@
 			isa = PBXGroup;
 			children = (
 				7247DC882ACD356D00A0BC45 /* CreateHomeworkField.swift */,
+				72D562A92ADA6D70006A386B /* CreateHomeworkSubjectView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -312,6 +350,7 @@
 		7247DC8A2ACD5E1F00A0BC45 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				72D562982ADA6550006A386B /* Subjects */,
 				7247DC942ACD628100A0BC45 /* Homeworks */,
 				7247DC8B2ACD5E3C00A0BC45 /* UseCase.swift */,
 			);
@@ -322,6 +361,7 @@
 			isa = PBXGroup;
 			children = (
 				7247DC8E2ACD5FDE00A0BC45 /* HomeworkRepository.swift */,
+				72D562872ADA5BED006A386B /* SubjectRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -360,6 +400,7 @@
 			isa = PBXGroup;
 			children = (
 				7247DCA22ACD65A800A0BC45 /* HomeworkRepositoryImpl.swift */,
+				72D562942ADA6353006A386B /* SubjectRepositoryImpl.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -369,6 +410,8 @@
 			children = (
 				7247DCA52ACD65D700A0BC45 /* HomeworkLocalDataSource.swift */,
 				7247DCA72ACD65EF00A0BC45 /* HomeworkLocalDataSourceImpl.swift */,
+				72D5628C2ADA5F41006A386B /* SubjectLocalDataSource.swift */,
+				72D5628E2ADA5F4F006A386B /* SubjectLocalDataSourceImpl.swift */,
 			);
 			path = DataSources;
 			sourceTree = "<group>";
@@ -378,6 +421,8 @@
 			children = (
 				7247DCAC2ACD67DB00A0BC45 /* HomeworkSnapshot.swift */,
 				7247DCB02ACD697700A0BC45 /* HomeworkUpdateReference.swift */,
+				72D562902ADA5FB7006A386B /* SubjectReference.swift */,
+				72D562922ADA603D006A386B /* SubjectSnapshot.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -386,6 +431,7 @@
 			isa = PBXGroup;
 			children = (
 				7247DCB32ACD6A6600A0BC45 /* HomeworkMapper.swift */,
+				72D562962ADA63AD006A386B /* SubjectMapper.swift */,
 			);
 			path = Mappers;
 			sourceTree = "<group>";
@@ -394,6 +440,8 @@
 			isa = PBXGroup;
 			children = (
 				7247DCB62ACDA22400A0BC45 /* HomeworkViewModel.swift */,
+				72D562832ADA5891006A386B /* HomeworkViewModelImpl.swift */,
+				72D562852ADA58BC006A386B /* HomeworkViewModelMock.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -430,6 +478,49 @@
 				7247DC6C2ACBE68F00A0BC45 /* HomeworkViewController.swift */,
 			);
 			path = Homework;
+			sourceTree = "<group>";
+		};
+		72D562982ADA6550006A386B /* Subjects */ = {
+			isa = PBXGroup;
+			children = (
+				72D562992ADA6563006A386B /* GetAllSubjectsUseCase.swift */,
+				72D5629B2ADA65AA006A386B /* CreateSubjectUseCase.swift */,
+				72D5629D2ADA6609006A386B /* DeleteSubjectUseCase.swift */,
+			);
+			path = Subjects;
+			sourceTree = "<group>";
+		};
+		72D5629F2ADA6650006A386B /* SubjectList */ = {
+			isa = PBXGroup;
+			children = (
+				72D562A62ADA6B1D006A386B /* Coordinators */,
+				72D562A02ADA66B7006A386B /* Controllers */,
+			);
+			path = SubjectList;
+			sourceTree = "<group>";
+		};
+		72D562A02ADA66B7006A386B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				72D562A12ADA66C5006A386B /* SubjectListViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		72D562A32ADA684B006A386B /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				72D562A42ADA685A006A386B /* CreateHomeworkCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		72D562A62ADA6B1D006A386B /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				72D562A72ADA6B2F006A386B /* SubjectListCoordinator.swift */,
+			);
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -550,8 +641,11 @@
 				7247DC702ACBFB5100A0BC45 /* HomeworkSectionHeader.swift in Sources */,
 				7247DCC02ACF0CFE00A0BC45 /* Publisher+Extension.swift in Sources */,
 				7247DC442ACBE2A000A0BC45 /* AppDelegate.swift in Sources */,
+				72D562A52ADA685A006A386B /* CreateHomeworkCoordinator.swift in Sources */,
+				72D562A22ADA66C5006A386B /* SubjectListViewController.swift in Sources */,
 				7247DCAD2ACD67DB00A0BC45 /* HomeworkSnapshot.swift in Sources */,
 				7247DCBA2ACDA73000A0BC45 /* CreateHomeworkViewModel.swift in Sources */,
+				72D562932ADA603D006A386B /* SubjectSnapshot.swift in Sources */,
 				7247DC682ACBE50600A0BC45 /* Coordinator.swift in Sources */,
 				7247DC832ACC7A5000A0BC45 /* CreateHomeworkButton.swift in Sources */,
 				7247DCB12ACD697700A0BC45 /* HomeworkUpdateReference.swift in Sources */,
@@ -559,18 +653,30 @@
 				7247DC6D2ACBE68F00A0BC45 /* HomeworkViewController.swift in Sources */,
 				7247DCA82ACD65EF00A0BC45 /* HomeworkLocalDataSourceImpl.swift in Sources */,
 				7247DC752ACC6D0D00A0BC45 /* HomeworkDetailsViewController.swift in Sources */,
+				72D5628D2ADA5F41006A386B /* SubjectLocalDataSource.swift in Sources */,
 				7247DC8C2ACD5E3C00A0BC45 /* UseCase.swift in Sources */,
+				72D5629A2ADA6563006A386B /* GetAllSubjectsUseCase.swift in Sources */,
+				72D5628B2ADA5C4C006A386B /* SubjectTasksEntity.swift in Sources */,
 				7247DCB72ACDA22400A0BC45 /* HomeworkViewModel.swift in Sources */,
 				7247DC982ACD635F00A0BC45 /* CreateHomeworkUseCase.swift in Sources */,
+				72D562842ADA5891006A386B /* HomeworkViewModelImpl.swift in Sources */,
+				72D562952ADA6353006A386B /* SubjectRepositoryImpl.swift in Sources */,
 				7247DCA32ACD65A800A0BC45 /* HomeworkRepositoryImpl.swift in Sources */,
 				7247DCA62ACD65D700A0BC45 /* HomeworkLocalDataSource.swift in Sources */,
 				7247DC7A2ACC6D6400A0BC45 /* HomeworkEntity.swift in Sources */,
 				7247DC892ACD356D00A0BC45 /* CreateHomeworkField.swift in Sources */,
+				72D5629C2ADA65AA006A386B /* CreateSubjectUseCase.swift in Sources */,
+				72D562972ADA63AD006A386B /* SubjectMapper.swift in Sources */,
 				7247DC9C2ACD644200A0BC45 /* MarkDoneHomeworkUseCase.swift in Sources */,
+				72D562862ADA58BC006A386B /* HomeworkViewModelMock.swift in Sources */,
 				7247DC662ACBE4EE00A0BC45 /* AppCoordinator.swift in Sources */,
+				72D562AA2ADA6D70006A386B /* CreateHomeworkSubjectView.swift in Sources */,
 				7247DC9A2ACD63E700A0BC45 /* DeleteHomeworkUseCase.swift in Sources */,
 				7247DC8F2ACD5FDE00A0BC45 /* HomeworkRepository.swift in Sources */,
+				72D5629E2ADA6609006A386B /* DeleteSubjectUseCase.swift in Sources */,
+				72D5628F2ADA5F4F006A386B /* SubjectLocalDataSourceImpl.swift in Sources */,
 				7247DC6B2ACBE5BC00A0BC45 /* HomeworkCoordinator.swift in Sources */,
+				72D562912ADA5FB7006A386B /* SubjectReference.swift in Sources */,
 				7247DC462ACBE2A000A0BC45 /* SceneDelegate.swift in Sources */,
 				7247DC962ACD629700A0BC45 /* GetAllTasksPublisherUseCase.swift in Sources */,
 				7247DC5E2ACBE3FE00A0BC45 /* AppStarter.swift in Sources */,
@@ -580,6 +686,8 @@
 				7247DCC22ACF273900A0BC45 /* WorkScheduler.swift in Sources */,
 				7247DCBD2ACDB60F00A0BC45 /* OrderedMap.swift in Sources */,
 				7247DC9F2ACD64D600A0BC45 /* HomeworkUpdate.swift in Sources */,
+				72D562A82ADA6B2F006A386B /* SubjectListCoordinator.swift in Sources */,
+				72D562882ADA5BED006A386B /* SubjectRepository.swift in Sources */,
 				7247DC862ACC7E3E00A0BC45 /* CustomButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

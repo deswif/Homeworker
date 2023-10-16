@@ -16,7 +16,7 @@ class GetAllTasksPublisherUseCase: UseCasePublisher {
         self.homeworkRepository = homeworkRepository
     }
     
-    func call() -> AnyPublisher<[SubjectEntity], Never> {
+    func call() -> AnyPublisher<[SubjectTasksEntity], Never> {
         homeworkRepository.allTasksPuiblisher()
     }
 }

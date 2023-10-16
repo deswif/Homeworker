@@ -16,8 +16,8 @@ class HomeworkRepositoryImpl: HomeworkRepository {
         self.localDataSource = localDataSource
     }
     
-    func allTasksPuiblisher() -> AnyPublisher<[SubjectEntity], Never> {
-        localDataSource.allTasksPublisher().map { HomeworkMapper.subjects(from: $0) }.eraseToAnyPublisher()
+    func allTasksPuiblisher() -> AnyPublisher<[SubjectTasksEntity], Never> {
+        localDataSource.allTasksPublisher().map { HomeworkMapper.subjectsTasks(from: $0) }.eraseToAnyPublisher()
     }
     
     func createHomework(title: String, subject: String, endDate: Date, completion: @escaping (Result<Void, Error>) -> Void) {

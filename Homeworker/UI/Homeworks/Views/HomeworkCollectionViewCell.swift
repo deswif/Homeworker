@@ -16,19 +16,15 @@ class HomeworkCollectionViewCell: UICollectionViewCell {
     var didDeleted: (() -> Void)?
     var didMarkedDone: (() -> Void)?
     
-    var homeworkPublisher: (() -> AnyPublisher<HomeworkEntity, Never>)? {
-        didSet {
-            if let homeworkPublisher = homeworkPublisher {
-                homeworkPublisher().sink(receiveValue: { [unowned self] homework in
-                    homeworkChanged(with: homework)
-                }).store(in: &bag)
-            } else {
-                bag.forEach { $0.cancel() }
+    private var futureAction: (() -> Void)?
+    
+    var homework: HomeworkEntity? {
+        willSet {
+            if let homework = newValue {
+                applyHomework(homework: homework)
             }
         }
     }
-    
-    var homework: HomeworkEntity?
     
     private let titleView: UILabel = {
         let view = UILabel()
@@ -55,9 +51,8 @@ class HomeworkCollectionViewCell: UICollectionViewCell {
         
         didDeleted = nil
         didMarkedDone = nil
-        homeworkPublisher = nil
         homework = nil
-        
+        futureAction = nil
     }
     
     private func configureViews() {
@@ -76,16 +71,6 @@ class HomeworkCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    private func homeworkChanged(with newHomework: HomeworkEntity) {
-        if homework == nil {
-            applyHomework(homework: newHomework)
-        } else {
-            UIView.animate(withDuration: 0.3) { [weak self] in
-                self?.applyHomework(homework: newHomework)
-            }
-        }
-    }
-    
     private func applyHomework(homework: HomeworkEntity) {
         backgroundColor = homework.status == .done ? .systemGreen : .systemGray6
         titleView.textColor = homework.status == .done ? .black : .label
@@ -101,8 +86,6 @@ class HomeworkCollectionViewCell: UICollectionViewCell {
         }
         
         titleView.attributedText = attributeString
-        
-        self.homework = homework
     }
 }
 
@@ -112,21 +95,28 @@ extension HomeworkCollectionViewCell: UIContextMenuInteractionDelegate {
         var actions: [UIAction] = []
         
         if let didMarkedDone = didMarkedDone, let homework = homework, homework.status != .done {
-            actions.append(UIAction(title: "Done", image: UIImage(systemName: "checkmark.circle")) { action in
-                didMarkedDone()
+            actions.append(UIAction(title: "Done", image: UIImage(systemName: "checkmark.circle")) { [weak self] action in
+                self?.futureAction = didMarkedDone
             })
         }
         
         if let didDeleted = didDeleted {
-            actions.append(UIAction(title: "Delete", image: UIImage(systemName: "trash"), attributes: .destructive) { action in
-                didDeleted()
+            actions.append(UIAction(title: "Delete", image: UIImage(systemName: "trash"), attributes: .destructive) { [weak self] action in
+                self?.futureAction = didDeleted
             })
         }
         
         if actions.isEmpty { return nil }
         
         return UIContextMenuConfiguration(actionProvider: { recomendedActions in
-            return UIMenu(children: actions)
+            UIMenu(children: actions)
         })
+    }
+    
+    func contextMenuInteraction(_ interaction: UIContextMenuInteraction, willEndFor configuration: UIContextMenuConfiguration, animator: UIContextMenuInteractionAnimating?) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.14) { [weak self] in
+            self?.futureAction?()
+            self?.futureAction = nil
+        }
     }
 }

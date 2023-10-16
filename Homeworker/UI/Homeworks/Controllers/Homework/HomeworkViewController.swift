@@ -13,13 +13,16 @@ import Combine
 
 class HomeworkViewController: UIViewController {
     
+    typealias DataSource = UICollectionViewDiffableDataSource<String, Int64>
+    typealias Snapshot = NSDiffableDataSourceSnapshot<String, Int64>
+    
     var coordinator: HomeworkCoordinator?
     var viewModel: HomeworkViewModel!
     
     let disposeBag = DisposeBag()
     var bag = Set<AnyCancellable>()
     
-    var dataSource: UICollectionViewDiffableDataSource<String, Int64>!
+    var dataSource: DataSource!
     
     private lazy var homeworkCollectionView: UICollectionView = {
         
@@ -36,7 +39,6 @@ class HomeworkViewController: UIViewController {
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
             withReuseIdentifier: HomeworkSectionHeader.identifier
         )
-        view.contentInset = .init(top: 0, left: 0, bottom: 100, right: 0)
         
         return view
     }()
@@ -74,7 +76,7 @@ class HomeworkViewController: UIViewController {
     private func configureHomeworkCollectionView() {
         homeworkCollectionView.delegate = self
         
-        dataSource = UICollectionViewDiffableDataSource<String, Int64>(
+        dataSource = DataSource(
             collectionView: homeworkCollectionView,
             cellProvider: { [weak self] collectionView, indexPath, itemIdentifier in
                 self?.cellProvider(collectionView: collectionView, indexPath: indexPath, id: itemIdentifier)
@@ -129,14 +131,8 @@ extension HomeworkViewController {
             for: indexPath
         ) as! HomeworkCollectionViewCell
         
-        let homework = homework(in: indexPath)
-        
-        cell.homeworkPublisher = { [unowned self] in
-            viewModel
-                .changesPublisher(homework: homework)
-                .prepend(homework)
-                .eraseToAnyPublisher()
-        }
+        let homework = viewModel.homework(with: id)
+        cell.homework = homework
         
         cell.didMarkedDone = { [weak self] in
             self?.viewModel.markDone(with: id)
@@ -161,7 +157,7 @@ extension HomeworkViewController {
                 for: indexPath
             ) as! HomeworkSectionHeader
             
-            sectionHeader.title = homework(in: indexPath).subject
+            sectionHeader.title = headerTitle(in: indexPath)
             
             return sectionHeader
             
@@ -175,22 +171,31 @@ extension HomeworkViewController {
     
     private func listenState() {
         
-        viewModel.homeworkPublisher.sink { [dataSource, emptyStateLabel] newHomework in
-            var snapshot = NSDiffableDataSourceSnapshot<String, Int64>()
-            
-            snapshot.appendSections(newHomework.map { $0.name })
-            
-            newHomework.forEach { subject in
-                snapshot.appendItems(subject.homeworks.map { $0.id }, toSection: subject.name)
+        viewModel.homeworkPublisher
+            .sink { [dataSource, emptyStateLabel, homeworkCollectionView] newHomework in
+                var snapshot = NSDiffableDataSourceSnapshot<String, Int64>()
+                
+                snapshot.appendSections(newHomework.map { $0.subject.name })
+                
+                newHomework.forEach { subject in
+                    snapshot.appendItems(subject.homeworks.map { $0.id }, toSection: subject.subject.name)
+                }
+                
+                snapshot.reloadItems(snapshot.itemIdentifiers)
+                snapshot.reloadSections(snapshot.sectionIdentifiers)
+                
+                UIView.animate(withDuration: 0.2) {
+                    dataSource?.apply(snapshot)
+                }
+                
+                UIView.transition(with: emptyStateLabel, duration: 0.2) {
+                    emptyStateLabel.isHidden = !newHomework.isEmpty
+                }
+                
+                homeworkCollectionView.isScrollEnabled = !newHomework.isEmpty
+                
             }
-            
-            dataSource?.apply(snapshot, animatingDifferences: true)
-            
-            UIView.transition(with: emptyStateLabel, duration: 0.2) {
-                emptyStateLabel.isHidden = !newHomework.isEmpty
-            }
-            
-        }.store(in: &bag)
+            .store(in: &bag)
     }
 }
 
@@ -198,12 +203,19 @@ extension HomeworkViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let homework = homework(in: indexPath)
+        guard let homework = homework else { return }
         
         coordinator?.goToDetails(of: homework)
     }
     
-    private func homework(in indexPath: IndexPath) -> HomeworkEntity {
-        viewModel.homeworkState[indexPath.section].homeworks[indexPath.item]
+    private func homework(in indexPath: IndexPath) -> HomeworkEntity? {
+        let id = dataSource.itemIdentifier(for: indexPath)
+        guard let id = id else { return nil }
+        return viewModel.homework(with: id)
+    }
+    
+    private func headerTitle(in indexPath: IndexPath) -> String? {
+        return dataSource.snapshot().sectionIdentifiers[indexPath.section]
     }
 }
 
@@ -238,7 +250,7 @@ extension HomeworkViewController {
         )
         
         let section = NSCollectionLayoutSection(group: group)
-        section.orthogonalScrollingBehavior = .continuous
+        section.orthogonalScrollingBehavior = .groupPagingCentered
         section.boundarySupplementaryItems = [header]
         section.contentInsets = .init(top: 0, leading: edgeInsets, bottom: 0, trailing: edgeInsets)
         
@@ -246,4 +258,13 @@ extension HomeworkViewController {
         
         return layout
     }
+}
+
+@available(iOS 17.0, *)
+#Preview {
+    let vc = HomeworkViewController()
+    vc.viewModel = HomeworkViewModelMock()
+    
+    return UINavigationController(rootViewController: vc)
+    
 }

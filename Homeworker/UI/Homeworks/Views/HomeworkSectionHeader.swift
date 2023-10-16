@@ -42,6 +42,12 @@ class HomeworkSectionHeader: UICollectionReusableView {
          }
 
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        title = nil
+    }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

@@ -12,6 +12,7 @@ import RxSwift
 class CreateHomeworkViewController: UIViewController {
     
     var viewModel: CreateHomeworkViewModel!
+    var coordinator: CreateHomeworkCoordinator?
     
     private let disposeBag = DisposeBag()
     private var bag = Set<AnyCancellable>()
@@ -39,14 +40,13 @@ class CreateHomeworkViewController: UIViewController {
     
     private let titleField: CreateHomeworkField = {
         let view = CreateHomeworkField()
-        view.placeholder = "Title"
+        view.placeholder = "What to do?"
         
         return view
     }()
     
-    private let subjectField: CreateHomeworkField = {
-        let view = CreateHomeworkField()
-        view.placeholder = "Subject"
+    private let subjectView: CreateHomeworkSubjectView = {
+        let view = CreateHomeworkSubjectView()
         
         return view
     }()
@@ -54,8 +54,7 @@ class CreateHomeworkViewController: UIViewController {
     private let endDateLabel: UILabel = {
         let view = UILabel()
         view.text = "End date:"
-        view.textColor = .label
-        view.font = .systemFont(ofSize: 16)
+        view.font = .preferredFont(forTextStyle: .caption1)
         view.numberOfLines = 1
         
         return view
@@ -92,6 +91,7 @@ class CreateHomeworkViewController: UIViewController {
         
         if #available(iOS 15.0, *) {
             if let sheet = sheetPresentationController {
+                sheet.detents = [.medium(), .large()]
                 sheet.prefersGrabberVisible = true
             }
         }
@@ -99,7 +99,7 @@ class CreateHomeworkViewController: UIViewController {
         view.backgroundColor = .systemBackground
         
         view.addSubview(titleField)
-        view.addSubview(subjectField)
+        view.addSubview(subjectView)
         view.addSubview(endDateLabel)
         view.addSubview(endDatePicker)
         view.addSubview(createButton)
@@ -110,7 +110,7 @@ class CreateHomeworkViewController: UIViewController {
         
         configureSpacers()
         configureTitleField()
-        configureSubjectField()
+        configureSubjectView()
         configureEndDatePicker()
         configureCreateButton()
     }
@@ -169,18 +169,17 @@ class CreateHomeworkViewController: UIViewController {
         }
     }
     
-    private func configureSubjectField() {
+    private func configureSubjectView() {
         
-        subjectField.rx.text.subscribe { [weak self] text in
-            self?.viewModel.subjectChanged(with: text!)
-        }.disposed(by: disposeBag)
+        subjectView.openPicker = { [weak self] in
+            self?.coordinator?.pickSubject(completion: { [weak self] subject in
+                self?.updateSelectedSubject(with: subject)
+            })
+        }
         
-        subjectField.delegate = self
-        
-        subjectField.snp.makeConstraints { make in
+        subjectView.snp.makeConstraints { make in
             make.leading.equalTo(titleField)
             make.trailing.equalTo(titleField)
-            make.height.equalTo(titleField)
             make.top.equalTo(titleField.snp.bottom).offset(15)
         }
     }
@@ -188,7 +187,6 @@ class CreateHomeworkViewController: UIViewController {
     private func configureEndDatePicker() {
         
         endDatePicker.rx.date.subscribe { [weak self] date in
-            print(date)
             self?.viewModel.endDateChanged(with: date)
         }.disposed(by: disposeBag)
         
@@ -196,7 +194,7 @@ class CreateHomeworkViewController: UIViewController {
         
         endDateLabel.snp.makeConstraints { make in
             make.leading.equalTo(titleField)
-            make.top.equalTo(subjectField.snp.bottom).offset(30)
+            make.top.equalTo(subjectView.snp.bottom).offset(30)
             make.height.equalTo(20)
             make.width.lessThanOrEqualTo(titleField)
         }
@@ -210,11 +208,11 @@ class CreateHomeworkViewController: UIViewController {
     
     private func configureCreateButton() {
         
-        createButton.rx.tap.subscribe { [weak self, titleField, subjectField, endDatePicker] _ in
+        createButton.rx.tap.subscribe { [weak self, titleField, subjectView, endDatePicker] _ in
             
-            self?.viewModel.createHometask(title: titleField.text!, subject: subjectField.text!, endDate: endDatePicker.date)
+            self?.viewModel.createHometask(title: titleField.text!, subject: subjectView.pickedSubject!.name, endDate: endDatePicker.date)
+            self?.coordinator?.homeworkCreated()
             
-            self?.dismiss(animated: true)
         }.disposed(by: disposeBag)
         
         createButton.snp.makeConstraints { make in
@@ -240,6 +238,11 @@ extension CreateHomeworkViewController {
         viewModel.isButtonAvailablePublisher.sink(receiveValue: { [weak self] isAvailable in
             self?.createButton.isEnabled = isAvailable
         }).store(in: &bag)
+    }
+    
+    private func updateSelectedSubject(with subject: SubjectEntity) {
+        viewModel.subjectChanged(with: subject)
+        subjectView.pickedSubject = subject
     }
 }
 

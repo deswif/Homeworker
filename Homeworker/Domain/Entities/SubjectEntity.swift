@@ -9,5 +9,4 @@ import Foundation
 
 struct SubjectEntity {
     let name: String
-    let homeworks: [HomeworkEntity]
 }

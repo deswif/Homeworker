@@ -9,7 +9,7 @@ import Foundation
 
 
 class HomeworkMapper {
-    static func subjects(from tasks: [HomeworkSnapshot]) -> [SubjectEntity] {
+    static func subjectsTasks(from tasks: [HomeworkSnapshot]) -> [SubjectTasksEntity] {
         var result = OrderedDictionary<String, [HomeworkEntity]>()
         
         
@@ -25,11 +25,11 @@ class HomeworkMapper {
         }
         
         let subjects = result.map { (key, value) in
-            SubjectEntity(name: key, homeworks: value.sorted(by: { first, second in
+            SubjectTasksEntity(subject: SubjectEntity(name: key), homeworks: value.sorted(by: { first, second in
                 first.endDate ?? Date() < second.endDate ?? Date() || (first.status != .done && second.status == .done)
             }))
         }.sorted { first, second in
-            first.name < second.name
+            first.subject.name < second.subject.name
         }
         
         return subjects
